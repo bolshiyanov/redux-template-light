@@ -31,7 +31,9 @@ function App() {
       </button>
       <h1 style={{position: 'absolute', top: 10,fontSize: 40}}>Redux</h1>
       <h2 style={{ position: "absolute", top: 70, fontSize: 20 }}>Lesson 1</h2>
-    </div>
+      <h3 style={{ position: "absolute", bottom: 30, fontSize: 14 }}><a href="https://github.com/bolshiyanov/redux-template-light/tree/main">Code is here: GitHub</a></h3>
+      </div>
+
   );
 }
 
