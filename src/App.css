@@ -9,9 +9,16 @@
   text-align: center;
 }
 
-.Customer {
+.customer-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.customer-item {
   padding: 1px;
-  border: 1px solid grey;
-  margin-top: 4px;
-  width: 100px;
+  margin-right: 2px;
+  border-bottom: 1px solid gray;
+  cursor: pointer;
+  
 }
