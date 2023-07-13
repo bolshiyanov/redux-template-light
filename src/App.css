@@ -8,3 +8,10 @@
   flex-flow: column;
   text-align: center;
 }
+
+.Customer {
+  padding: 1px;
+  border: 1px solid grey;
+  margin-top: 4px;
+  width: 100px;
+}
