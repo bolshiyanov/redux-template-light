@@ -49,9 +49,11 @@ function App() {
       <div style={{ display: "flex", flexFlow: "row" }}>
         <button onClick={() => addCustomer(prompt())}>Add one customer</button>
 
-        <button onClick={() => dispatch(fetchCustomers())}>
-          Add many customer
-        </button>
+        {customers.length < 10 && (
+          <button onClick={() => dispatch(fetchCustomers())}>
+            Add many customer
+          </button>
+        )}
       </div>
       {customers.length > 0 ? (
         <div className="customer-box">
@@ -61,7 +63,7 @@ function App() {
               key={customer.id}
               className="customer-item"
             >
-              {customer.name},&nbsp;
+              {customer.name} 
             </div>
           ))}
         </div>
@@ -69,8 +71,12 @@ function App() {
         <div>We have not any customers</div>
       )}
 
-      <h1 style={{ position: "absolute", top: 10, fontSize: 40 }}>Redux-Thunk</h1>
-      <h2 style={{ position: "absolute", top: 70, fontSize: 20 }}>Template for React</h2>
+      <h1 style={{ position: "absolute", top: 10, fontSize: 40 }}>
+        Redux-Thunk
+      </h1>
+      <h2 style={{ position: "absolute", top: 70, fontSize: 20 }}>
+        Template for React
+      </h2>
       <h3 style={{ position: "absolute", bottom: 30, fontSize: 14 }}>
         <a href="https://github.com/bolshiyanov/redux-template-light/tree/main">
           Code is here: GitHub

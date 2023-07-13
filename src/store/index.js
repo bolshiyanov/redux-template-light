@@ -1,14 +1,17 @@
+import { configureStore } from '@reduxjs/toolkit';
+import { cashReducer } from './reducers/cashReducer';
+import { customerReducer } from './reducers/customerReducer';
+import thunk from 'redux-thunk';
 
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { cashReducer } from "./reducers/cashReducer";
-import { customerReducer } from "./reducers/customerReducer";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
+const rootReducer = {
+  cash: cashReducer,
+  customers: customerReducer
+};
 
-const rootReducer = combineReducers ({
-    cash: cashReducer,
-    customers: customerReducer
-})
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: [thunk],
+  devTools: process.env.NODE_ENV !== 'production'
+});
 
-export const store = createStore(rootReducer, 
-    composeWithDevTools(applyMiddleware(thunk)));
+export default store;
